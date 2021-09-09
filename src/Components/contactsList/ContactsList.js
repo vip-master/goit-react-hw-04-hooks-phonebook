@@ -5,8 +5,6 @@ import ContactItem from './contactItem/ContactItem';
 function Contacts({contacts, onDelete, filter}) {
     filter=filter.split(" ").join("").toLowerCase()
     contacts=contacts.filter(i=>i.name.toLowerCase().startsWith(filter))
-    
-    console.log("contacts: ",contacts)
     return (
         <ul>
             {contacts.map(contact=>(
