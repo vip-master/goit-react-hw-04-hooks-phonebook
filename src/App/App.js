@@ -21,15 +21,15 @@ const App=()=>{
     }
 
     const delContact=(e)=>{
-        setState({...state,contacts: state.contacts.filter(i=>i.id!==e.target.id)})
+        setState(state=>({...state,contacts: state.contacts.filter(i=>i.id!==e.target.id)}))
     }
 
     const filter=(e)=>{
-        setState({...state,filter: e.target.value.trim()})
+        setState(state=>({...state,filter: e.target.value.trim()}))
     }
     
     if(!state.isMount && localStorage.getItem("contacts")){
-        setState({...state, isMount:true, contacts:JSON.parse(localStorage.getItem("contacts"))})
+        setState(state=>({...state, isMount:true, contacts:JSON.parse(localStorage.getItem("contacts"))}))
     }  
     else{
         localStorage.setItem("contacts",JSON.stringify(state.contacts))

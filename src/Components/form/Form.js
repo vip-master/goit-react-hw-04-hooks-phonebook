@@ -12,7 +12,7 @@ const Form=({contacts,addContact})=>{
     const [state,setState]=useState(_INITIAL_STATE_)
 
     const handleChange=({target:{name,value}})=>{
-        setState({...state,[name]: value.trim()})
+        setState(state=>({...state,[name]: value.trim()}))
     }
 
     const handleSubmit=(e)=>{
